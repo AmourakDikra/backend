@@ -12,58 +12,62 @@ import { RiAccountCircleLine } from "react-icons/ri";
 import { BiMessageAltAdd, BiDotsHorizontalRounded } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../ThemeContext";
-const Navigation = ()=>{
-     const [nav, setnav] = useState(false);
-    
-      const { DarkTheme, setDarkTheme } = useContext(ThemeContext);
-    
-      function changeTheme() {
-        setDarkTheme(!DarkTheme);
-      }
-    return(
-        <div className={`navigation ${nav && "active"} ${DarkTheme && "dark"}`}>
-              <div
-                className={`menu ${nav && "active"}`}
-                onClick={() => {
-                  setnav((prevState) => !prevState);
-                }}
-              >
-                <FiChevronLeft className="menu-icon" />
-              </div>
+import Nav from "./NavIconTemplate/Nav"; // Import Nav component
 
-  
-    <header>
+const Navigation = () => {
+  const [nav, setnav] = useState(false);
+
+  const { DarkTheme, setDarkTheme } = useContext(ThemeContext);
+
+  function changeTheme() {
+    setDarkTheme(!DarkTheme);
+  }
+  return (
+    <div className={`navigation ${nav && "active"} ${DarkTheme && "dark"}`}>
+      <div
+        className={`menu ${nav && "active"}`}
+        onClick={() => {
+          setnav((prevState) => !prevState);
+        }}
+      >
+        <FiChevronLeft className="menu-icon" />
+      </div>
+
+      <header>
         <div className="profile">
-            <img src="https://logodix.com/logo/1625240.jpg" alt="user-img" className="profile-img"/>
+          <img
+            src="https://logodix.com/logo/1625240.jpg"
+            alt="user-img"
+            className="profile-img"
+          />
         </div>
         <span>creative_ambition</span>
-    </header>
-       <Nav Icon={TbDashboard} title={"Dashboard"} />
-       <Nav Icon={VscGraphLine} title={"Analytics"} />
-       <Nav Icon={FiMessageSquare} title={"Messages"} />
-       <Nav Icon={AiOutlineUsergroupAdd} title={"Followers"} />
- 
-       <div className="divider"></div>
- 
-       <Nav Icon={MdOutlineNotificationsActive} title={"Notifications"} />
-       <Nav Icon={RiAccountCircleLine} title={"Following"} />
-       <Nav Icon={AiOutlineDollarCircle} title={"Earnings"} />
-       <Nav Icon={TbFileUpload} title={"Posts"} />
-       <Nav Icon={BiMessageAltAdd} title={"Message Requests"} />
-       <Nav Icon={AiOutlineUserSwitch} title={"Change Account"} />
+      </header>
+      <Nav Icon={TbDashboard} title={"Dashboard"} />
+      <Nav Icon={VscGraphLine} title={"Analytics"} />
+      <Nav Icon={FiMessageSquare} title={"Messages"} />
+      <Nav Icon={AiOutlineUsergroupAdd} title={"Followers"} />
 
-       
-       <div className="divider"></div>
-       
-        <Nav
-         Icon={MdSwapHoriz}
-            title={`${
-            DarkTheme ? "Switch to Light Theme" : "Switch to Dark Theme"
-          }`}
-         onClick={changeTheme}
-            />
-        <Nav Icon={BiDotsHorizontalRounded} title={"More details"} />
-        
+      <div className="divider"></div>
+
+      <Nav Icon={MdOutlineNotificationsActive} title={"Notifications"} />
+      <Nav Icon={RiAccountCircleLine} title={"Following"} />
+      <Nav Icon={AiOutlineDollarCircle} title={"Earnings"} />
+      <Nav Icon={TbFileUpload} title={"Posts"} />
+      <Nav Icon={BiMessageAltAdd} title={"Message Requests"} />
+      <Nav Icon={AiOutlineUserSwitch} title={"Change Account"} />
+
+      <div className="divider"></div>
+
+      <Nav
+        Icon={MdSwapHoriz}
+        title={`${
+          DarkTheme ? "Switch to Light Theme" : "Switch to Dark Theme"
+        }`}
+        onClick={changeTheme}
+      />
+      <Nav Icon={BiDotsHorizontalRounded} title={"More details"} />
+
       <svg
         className="bg-waves"
         preserveAspectRatio="none"
@@ -85,9 +89,9 @@ const Navigation = ()=>{
           opacity=".5"
         />
         <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
-      </svg>  
- 
-
-</div>);};
+      </svg>
+    </div>
+  );
+};
 
 export default Navigation;

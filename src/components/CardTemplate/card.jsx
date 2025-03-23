@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./csrd.css";
 
 const Card = ({ Icon, title, value }) => {
   return (
