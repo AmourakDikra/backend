@@ -34,32 +34,35 @@ const Content = () => {
           <div className="col-12">
             <div className="products-card">
               <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2 className="card-title m-0">Products List</h2>
+                <h2 className="card-title m-0">La listes des factures</h2>
                 <button className="btn btn-primary">
                   <i className="bi bi-plus-lg me-2"></i>
-                  Add New Product
+                  Ajouter un factures
                 </button>
               </div>
               <div className="table-responsive">
                 <table className="table table-hover">
                   <thead>
                     <tr>
-                      <th>Product Name</th>
-                      <th>Category</th>
-                      <th>Price</th>
-                      <th>Status</th>
+                      <th>Name</th>
+                      <th>ICE</th>
+                      <th>IF</th>
+                      <th>CNIS</th>
+                      <th>Date</th>
                       <th>Actions</th>
+
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Sample Product</td>
-                      <td>Electronics</td>
-                      <td>$299.99</td>
-                      <td><span className="badge bg-success">In Stock</span></td>
+                      <td>OCTOBOT</td>
+                      <td>123456789</td>
+                      <td>987654321</td>
+                      <td>9876543210</td>
+                      <td>2025-03-24</td>
                       <td>
-                        <button className="btn btn-sm btn-outline-primary me-2">Edit</button>
-                        <button className="btn btn-sm btn-outline-danger">Delete</button>
+                        <button className="btn btn-sm btn-outline-primary me-2">Modifier</button>
+                        <button className="btn btn-sm btn-outline-danger">Supprimer</button>
                       </td>
                     </tr>
                   </tbody>
