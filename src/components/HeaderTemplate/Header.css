@@ -1,4 +1,3 @@
-
 header {
   position: relative;
   display: flex;
@@ -16,12 +15,13 @@ header .search-bar {
 }
 
 header .search-bar input {
-  padding: 8px 16px;
-  border: 1px solid rgb(82, 82, 82);
-  border-radius: 100px;
+  padding: 10px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   flex: 1;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 14px;
+  transition: var(--transition);
 }
 
 header .search-bar input:focus::placeholder {
@@ -70,8 +70,9 @@ header .tools .divider {
 header .tools .user {
   position: relative;
   height: 30px;
+  width: 30px;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: 25px;
   border: 1px solid var(--color);
   background-color: lightgray;
   cursor: pointer;
@@ -81,5 +82,22 @@ header .tools .user:active {
 }
 
 header.dark input {
-  color: white;
+  color: rgb(230, 230, 230);
+}
+
+.header {
+  padding: 16px 24px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark .header {
+  background: var(--dark-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .search-bar input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
 }

@@ -69,7 +69,6 @@ const Header = () => {
             alt="Profile"
             className="profile-img"
           />
-          {user && <p>{user.email}</p>} 
         </div>
       </div>
     </header>

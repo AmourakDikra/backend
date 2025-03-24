@@ -13,6 +13,15 @@ import {
   Line,
 } from "recharts";
 
+// First, let's define a professional color palette at the top of the file
+const chartColors = {
+  primary: '#2563eb',    // Blue
+  secondary: '#64748b',  // Slate
+  success: '#22c55e',    // Green
+  accent: '#0ea5e9',     // Light Blue
+  neutral: '#94a3b8'     // Light Slate
+};
+
 const Analytics = ({
   chart_i,
   chart_ii,
@@ -21,12 +30,11 @@ const Analytics = ({
   value,
   illustration,
 }) => {
-  // Données pour le graphique à barres - "Factures payées" et "Nombre de factures"
   const data = [
     {
       name: "Sept",
-      PaidInvoices: 4000,  // Factures payées
-      TotalInvoices: 2400,  // Nombre de factures
+      PaidInvoices: 4000, 
+      TotalInvoices: 2400,  
     },
     {
       name: "Oct",
@@ -110,12 +118,12 @@ const Analytics = ({
           </header>
 
           <BarChart className="chart" width={250} height={210} data={data}>
-            <CartesianGrid strokeDasharray="100 10" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
             <XAxis dataKey="name" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="PaidInvoices" fill="#00464e" />
-            <Bar dataKey="TotalInvoices" fill="#810551" />
+            <Bar dataKey="PaidInvoices" fill={chartColors.primary} />
+            <Bar dataKey="TotalInvoices" fill={chartColors.secondary} />
           </BarChart>
         </>
       )}
@@ -124,17 +132,46 @@ const Analytics = ({
         <LineChart width={260} height={220} data={data02} margin={{ right: 10, top: 10 }}>
           <XAxis dataKey="name" />
           <YAxis />
+          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#810551" />
-          <Line type="monotone" dataKey="uv" stroke="#00464e" />
+          <Line 
+            type="monotone" 
+            dataKey="pv" 
+            stroke={chartColors.primary}
+            strokeWidth={2}
+          />
+          <Line 
+            type="monotone" 
+            dataKey="uv" 
+            stroke={chartColors.secondary}
+            strokeWidth={2}
+          />
         </LineChart>
       )}
 
       {chart_iii && (
         <PieChart width={300} height={300}>
-          <Pie data={data03} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#00464e" />
-          <Pie data={data04} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={50} outerRadius={70} fill="#810551" label />
+          <Pie 
+            data={data03} 
+            dataKey="value" 
+            nameKey="name" 
+            cx="50%" 
+            cy="50%" 
+            outerRadius={50} 
+            fill={chartColors.primary}
+          />
+          <Pie 
+            data={data04} 
+            dataKey="value" 
+            nameKey="name" 
+            cx="50%" 
+            cy="50%" 
+            innerRadius={50} 
+            outerRadius={70} 
+            fill={chartColors.secondary}
+            label 
+          />
         </PieChart>
       )}
 

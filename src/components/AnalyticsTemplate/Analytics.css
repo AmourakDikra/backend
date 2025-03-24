@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
   
   .analytics header {
@@ -12,32 +13,65 @@
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
+    margin-bottom: 1.5rem;
   }
   
   .analytics header .followers {
-    color: #00464e;
+    color: #475569;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 1.5rem;
   }
   .analytics header .earnings {
-    color: #810551;
+    color: #475569;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 1.5rem;
   }
   
   .analytics .title {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
   }
   
   .analytics .value {
-    font-size: 18px;
-    color: lime;
+    font-size: 2rem;
+    color: #2563eb;
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
   
   .analytics .extra-text {
-    color: rgb(95, 95, 95);
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 500;
     text-align: center;
+    line-height: 1.5;
   }
   
   .analytics .illustration {
-    height: 150px;
-    margin: 8px 0 0;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  .analytics .recharts-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .analytics .recharts-legend-item-text {
+    font-size: 14px;
+    color: #64748b;
+  }
+  
+  .analytics .recharts-tooltip-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }

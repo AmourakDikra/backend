@@ -1,15 +1,12 @@
-
 .main {
-  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  background-color: #e4e4e4;
   min-height: 100vh;
-  --dm-bg: #111;
+  background-color: var(--background);
 }
 
 .main.dark {
-  background-color: var(--dm-bg);
+  background-color: var(--dark-bg);
   color: white;
 }

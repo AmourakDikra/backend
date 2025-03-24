@@ -1,25 +1,41 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: roboto;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #0284c7;
+  --accent-color: #0ea5e9;
+  --success-color: #22c55e;
+  --warning-color: #eab308;
+  --error-color: #ef4444;
+  --dark-bg: #0f172a;
+  --light-bg: #f8fafc;
+  --text-light: #f1f5f9;
+  --text-dark: #1e293b;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
 }
 
 .App {
-  position: relative;
   display: flex;
   min-height: 100vh;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: #111;
+  background-color: var(--light-bg);
+}
+
+.App.dark {
+  background-color: var(--dark-bg);
 }
 
 ::-webkit-scrollbar {
-  background-color: #111;
-  width: 3px;
+  width: 6px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #00464e;
+  background-color: var(--primary-color);
+  border-radius: 10px;
 }
