@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Header from "../Components/HeaderTemplate/Header";
+import Header from "../components/HeaderTemplate/Header";  // المسار الصحيح
 import Content from "../Content/Content";
 import { ThemeContext } from "../ThemeContext";
 import "./Main.css";

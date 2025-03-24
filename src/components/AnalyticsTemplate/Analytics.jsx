@@ -21,32 +21,35 @@ const Analytics = ({
   value,
   illustration,
 }) => {
+  // Données pour le graphique à barres - "Factures payées" et "Nombre de factures"
   const data = [
     {
       name: "Sept",
-      Earnings: 4000,
-      Followers: 2400,
+      PaidInvoices: 4000,  // Factures payées
+      TotalInvoices: 2400,  // Nombre de factures
     },
     {
       name: "Oct",
-      Earnings: 3000,
-      Followers: 1398,
+      PaidInvoices: 3000,
+      TotalInvoices: 1398,
     },
     {
       name: "Nov",
-      Earnings: 2000,
-      Followers: 9800,
+      PaidInvoices: 2000,
+      TotalInvoices: 9800,
     },
     {
       name: "Dec",
-      Earnings: 2780,
-      Followers: 3908,
+      PaidInvoices: 2780,
+      TotalInvoices: 3908,
     },
   ];
+
+  // Données pour le graphique linéaire - "Montants payés" et "Factures en retard"
   const data02 = [
     {
-      uv: 4000,
-      pv: 2400,
+      uv: 4000,  // Montants payés
+      pv: 2400,  // Factures en retard
     },
     {
       uv: 3000,
@@ -66,65 +69,44 @@ const Analytics = ({
     },
   ];
 
+  // Données pour le graphique en secteurs - Répartition entre "Factures payées" et "Factures non payées"
   const data03 = [
     {
-      name: "Group A",
+      name: "Paid Invoices",  // Factures payées
       value: 400,
     },
     {
-      name: "Group B",
+      name: "Unpaid Invoices",  // Factures non payées
       value: 300,
     },
     {
-      name: "Group C",
+      name: "Pending",  // Factures en attente
       value: 300,
-    },
-    {
-      name: "Group D",
-      value: 200,
-    },
-    {
-      name: "Group E",
-      value: 278,
-    },
-    {
-      name: "Group F",
-      value: 189,
     },
   ];
+  
   const data04 = [
     {
-      name: "Group A",
+      name: "Paid",  // Factures payées
       value: 2000,
     },
     {
-      name: "Group B",
+      name: "Unpaid",  // Factures non payées
       value: 3567,
     },
     {
-      name: "Group C",
+      name: "Pending",  // Factures en attente
       value: 598,
     },
-    {
-      name: "Group D",
-      value: 2000,
-    },
-    {
-      name: "Group E",
-      value: 1000,
-    },
-    {
-      name: "Group F",
-      value: 2500,
-    },
   ];
+
   return (
     <div className="analytics">
       {chart_i && (
         <>
           <header>
-            <span className="followers">Subcribers:</span>
-            <span className="earnings">Earnings:</span>
+            <span className="followers">Factures payées :</span>
+            <span className="earnings">Nombre de factures :</span>
           </header>
 
           <BarChart className="chart" width={250} height={210} data={data}>
@@ -132,19 +114,14 @@ const Analytics = ({
             <XAxis dataKey="name" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Followers" fill="#00464e" />
-            <Bar dataKey="Earnings" fill="#810551" />
+            <Bar dataKey="PaidInvoices" fill="#00464e" />
+            <Bar dataKey="TotalInvoices" fill="#810551" />
           </BarChart>
         </>
       )}
 
       {chart_ii && (
-        <LineChart
-          width={260}
-          height={220}
-          data={data02}
-          margin={{ right: 10, top: 10 }}
-        >
+        <LineChart width={260} height={220} data={data02} margin={{ right: 10, top: 10 }}>
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
@@ -156,26 +133,8 @@ const Analytics = ({
 
       {chart_iii && (
         <PieChart width={300} height={300}>
-          <Pie
-            data={data03}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={50}
-            fill="#00464e"
-          />
-          <Pie
-            data={data04}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            innerRadius={50}
-            outerRadius={70}
-            fill="#810551"
-            label
-          />
+          <Pie data={data03} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#00464e" />
+          <Pie data={data04} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={50} outerRadius={70} fill="#810551" label />
         </PieChart>
       )}
 
@@ -184,7 +143,7 @@ const Analytics = ({
           <h1 className="title">{title}</h1>
           <h2 className="value">{value}</h2>
           <h2 className="extra-text">
-            People are loving your content
+            Les factures sont sous contrôle !
             <br />
             🙌🎉🎆
           </h2>

@@ -93,6 +93,7 @@
     aspect-ratio: 1;
     --clr-i: #00464e;
     --clr-ii: #810551;
+    
   }
   
   .content .row.square::after {
