@@ -39,3 +39,27 @@
   background-color: var(--primary-color);
   border-radius: 10px;
 }
+
+/* Toast Styles */
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Toastify__toast--success {
+  background: #22c55e;
+}
+
+.Toastify__toast--error {
+  background: #ef4444;
+}
+
+.Toastify__toast-body {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.dark .Toastify__toast {
+  background: var(--surface);
+  color: var(--text-primary);
+}

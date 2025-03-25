@@ -6,6 +6,8 @@ import { ThemeContext } from "./ThemeContext";
 import Login from "./Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Firebase";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [DarkTheme, setDarkTheme] = useState(true);
@@ -33,6 +35,7 @@ function App() {
           <Login />
         )}
       </div>
+      <ToastContainer />
     </ThemeContext.Provider>
   );
 }

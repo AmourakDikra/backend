@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "./Content.css";
 import { ThemeContext } from "../ThemeContext";
-import Analytics from "../Components/AnalyticsTemplate/Analytics";
+import Analytics from "../components/AnalyticsTemplate/Analytics";
 
 const Content = () => {
   const { DarkTheme } = useContext(ThemeContext);
